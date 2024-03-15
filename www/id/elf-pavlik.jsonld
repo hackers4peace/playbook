@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "solid": "http://www.w3.org/ns/solid/terms#"
+  },
+  "@graph": [
+    {
+      "@id": "https://elf-pavlik.hackers4peace.net",
+      "@type": "foaf:Person",
+      "foaf:name": "elf Pavlik",
+      "solid:oidcIssuer": {
+        "@id": "https://oidc.hackers4peace.net/"
+      }
+    }
+  ]
+}

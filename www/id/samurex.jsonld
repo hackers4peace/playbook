@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "solid": "http://www.w3.org/ns/solid/terms#"
+  },
+  "@graph": [
+    {
+      "@id": "https://samurex.hackers4peace.net",
+      "@type": "foaf:Person",
+      "foaf:name": "Maciej Samoraj",
+      "solid:oidcIssuer": {
+        "@id": "https://oidc.hackers4peace.net/"
+      }
+    }
+  ]
+}

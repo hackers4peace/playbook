@@ -1,0 +1,5 @@
+h4p:
+  hosts:
+    hetzner:
+      ansible_host: 5.75.154.192
+      ansible_user: root
