@@ -1,0 +1,12 @@
+---
+- name: APT update
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Install packages
+  ansible.builtin.apt:
+    name: '{{ packages }}'
+  vars:
+    packages:
+      - nginx
+      - cron

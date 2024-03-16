@@ -1,0 +1,42 @@
+---
+- name: Copy static id.h4p
+  ansible.builtin.copy:
+    src: files/www/id
+    dest: /var/www
+    mode: preserve
+
+- name: Copy config id.h4p
+  ansible.builtin.copy:
+    src: files/nginx/id.conf
+    dest: /etc/nginx/sites-available/id
+    mode: preserve
+
+- name: Enable id.h4p
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/id
+    dest: /etc/nginx/sites-enabled/id
+    state: link
+
+- name: Copy config elf-pavlik.h4p
+  ansible.builtin.copy:
+    src: files/nginx/elf-pavlik.conf
+    dest: /etc/nginx/sites-available/elf-pavlik
+    mode: preserve
+
+- name: Enable elf-pavlik.h4p
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/elf-pavlik
+    dest: /etc/nginx/sites-enabled/elf-pavlik
+    state: link
+
+- name: Copy config samurex.h4p
+  ansible.builtin.copy:
+    src: files/nginx/samurex.conf
+    dest: /etc/nginx/sites-available/samurex
+    mode: preserve
+
+- name: Enable samurex.h4p
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/samurex
+    dest: /etc/nginx/sites-enabled/samurex
+    state: link

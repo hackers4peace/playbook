@@ -1,0 +1,6 @@
+---
+- name: Copy SSL options
+  ansible.builtin.copy:
+    src: files/nginx/options-ssl.conf
+    dest: /etc/nginx/options-ssl.conf
+    mode: preserve
