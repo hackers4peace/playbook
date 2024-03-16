@@ -1,0 +1,30 @@
+---
+- name: Install Certbot
+  import_role: geerlingguy.certbot
+  vars:
+    certbot_admin_email: elf-pavlik@hackers4peace.net
+    certbot_create_if_missing: true
+    certbot_create_standalone_stop_services:
+      - nginx
+    certbot_certs:
+      - domains:
+          - id.hackers4peace.net
+      - domains:
+          - elf-pavlik.hackers4peace.net
+      - domains:
+          - samurex.hackers4peace.net
+
+- name: Flush handlers in case any configs have changed.
+  ansible.builtin.meta: flush_handlers
+
+- name: Restart Nginx
+  ansible.builtin.service:
+    name: nginx
+    state: restarted
+
+- name: Test secure connection to SSL domain.
+  ansible.builtin.uri:
+    url: https://elf-pavlik.hackers4peace.net/
+    status_code: 200
+  delegate_to: localhost
+  become: false

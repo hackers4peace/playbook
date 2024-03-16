@@ -1,0 +1,5 @@
+---
+- name: Install sites
+  import_tasks: sites.yml
+- name: Install certbot
+  import_tasks: certbot.yml
